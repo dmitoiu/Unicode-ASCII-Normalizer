@@ -17,11 +17,11 @@
 
 import unicodedata
 import sys
-import re
 
-def remove_unicode_styles(text):
+
+def remove_unicode_styles(data):
     # Decompose Unicode characters into base characters
-    normalized_text = unicodedata.normalize('NFKD', text)
+    normalized_text = unicodedata.normalize('NFKD', data)
     # Keep only ASCII characters, effectively removing diacritics and styles
     clean_text = ''.join(c for c in normalized_text if ord(c) < 128)
     return clean_text
